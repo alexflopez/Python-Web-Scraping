@@ -2,7 +2,7 @@
 A simple web scaping using selenium for data extraction, pandas for csv conversion and sending the dataframe to Google Bigquery table.
 
 ### Instructions
-Before the repo cloned, run the following commands on terminal (VS Code)\
+Before the repo cloned, run the following commands on terminal (VS Code)
 
 ### Create a Virtual Enviroment
 python3 -m venv web_scrapping_env
