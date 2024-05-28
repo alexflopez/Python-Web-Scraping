@@ -4,13 +4,13 @@ A simple web scaping using selenium for data extraction, pandas for csv conversi
 ### Instructions
 Before the repo cloned, run the following commands on terminal (VS Code)\
 
-## Create a Virtual Enviroment
+### Create a Virtual Enviroment
 python3 -m venv web_scrapping_env
 
-## Activate the Virtual Enviroment
+### Activate the Virtual Enviroment
 . web_scrapping_env/bin/activate
 
 
-## Installing the project requirements
+### Installing the project requirements
 After the venv activated, you need to install the requirements. Run the following command on terminal:\
 pip install -r requirements.txt
