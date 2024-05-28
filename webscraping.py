@@ -48,18 +48,18 @@ i = 1
 
 # //tr/td[1]
 for response in responses:
-    #print(response.text)
-    sort.append(response.find_element(By.XPATH,'//tr['+str(i)+']/td[1]').text)
-    logo.append(response.find_element(By.XPATH,'//tr['+str(i)+']/td[2]').text)
-    name.append(response.find_element(By.XPATH,'//tr['+str(i)+']/td[3]').text)
-    percentage.append(response.find_element(By.XPATH,'//tr['+str(i)+']/td[4]').text)
-    price.append(response.find_element(By.XPATH,'//tr['+str(i)+']/td[5]').text)
-    rating.append(response.find_element(By.XPATH,'//tr['+str(i)+']/td[6]').text)
-    release.append(response.find_element(By.XPATH,'//tr['+str(i)+']/td[7]').text)
-    ends.append(response.find_element(By.XPATH,'//tr['+str(i)+']/td[8]').text)
-    started.append(response.find_element(By.XPATH,'//tr['+str(i)+']/td[9]').text)
+    # print(response.text)
+    sort.append(response.find_element(By.XPATH, '//tr['+str(i)+']/td[1]').text)
+    logo.append(response.find_element(By.XPATH, '//tr['+str(i)+']/td[2]/a/img').get_attribute("src"))
+    name.append(response.find_element(By.XPATH, '//tr['+str(i)+']/td[3]').text)
+    percentage.append(response.find_element(By.XPATH, '//tr['+str(i)+']/td[4]').text)
+    price.append(response.find_element(By.XPATH, '//tr['+str(i)+']/td[5]').text)
+    rating.append(response.find_element(By.XPATH, '//tr['+str(i)+']/td[6]').text)
+    release.append(response.find_element(By.XPATH, '//tr['+str(i)+']/td[7]').text)
+    ends.append(response.find_element(By.XPATH, '//tr['+str(i)+']/td[8]').text)
+    started.append(response.find_element(By.XPATH, '//tr['+str(i)+']/td[9]').text)
 
-    print(name)
+    # print(name)
     i += 1     
 
     if i == row_count + 1:
@@ -67,9 +67,14 @@ for response in responses:
 
 driver.quit()
 
-df = pd.DataFrame({"sort":sort, "logo": logo,"name": name, 
-                   "percentage":percentage, "price": price, 
-                   "rating": rating, "release": release, "ends": ends,
+df = pd.DataFrame({"sort": sort,
+                   "logo": logo,
+                   "name": name,
+                   "percentage": percentage,
+                   "price": price,
+                   "rating": rating,
+                   "release": release,
+                   "ends": ends,
                    "started": started})
 
 print(df)
